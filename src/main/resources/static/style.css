@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #000000; /* black background */
+  color: #ffffff; /* white text */
+}
+
+form input, form button {
+  margin: 5px;
+  padding: 8px;
+  background-color: #222222; /* dark gray input background */
+  color: #ffffff; /* white text */
+  border: 1px solid #ffffff; /* white border */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  color: #ffffff; /* white list text */
+}
+
+form button:hover {
+  background-color: #333333;
+  cursor: pointer;
+}

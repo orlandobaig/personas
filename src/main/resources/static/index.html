@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Personas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Personas Registradas</h1>
+
+  <form id="personaForm">
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <input type="text" id="apellido" placeholder="Apellido" required>
+    <input type="email" id="email" placeholder="Correo electrónico" required>
+    <button type="submit">Agregar Persona</button>
+  </form>
+
+  <h2>Lista:</h2>
+  <ul id="personaList"></ul>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>
