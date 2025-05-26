@@ -1,14 +1,25 @@
-# Usa una imagen base con JDK 17
-FROM eclipse-temurin:17-jdk-alpine
-
-# Establece el directorio de trabajo dentro del contenedor
+# ------------ STAGE 1: build the application ------------
+FROM eclipse-temurin:17-jdk-alpine AS build
 WORKDIR /app
 
-# Copia el archivo .jar ya construido desde el sistema host al contenedor
-COPY target/personas-0.0.1-SNAPSHOT.jar app.jar
+# Copy the Maven wrapper and project files
+COPY . .
 
-# Expone el puerto en el que Spring Boot corre por defecto
+# Give permission to execute the Maven wrapper
+RUN chmod +x mvnw
+
+# Build the application
+RUN ./mvnw clean package -DskipTests
+
+# ------------ STAGE 2: run the application ------------
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+
+# Copy the built jar from the previous stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Expose the port Spring Boot uses
 EXPOSE 8080
 
-# Comando para ejecutar la app
+# Start the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
