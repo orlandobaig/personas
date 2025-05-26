@@ -1,46 +1,78 @@
-// This package defines the location of the class in your project structure
+// Función: Declara la ubicación del paquete de esta clase modelo
+// Contexto: Organiza archivos y evita conflictos de nombres
+// Implementación: Paquete llamado 'model' dentro de 'com.example.personas'
+// Resumen: Esta clase pertenece a la capa 'model' de la aplicación
 package com.example.personas.model;
 
-// Import statements for Jakarta Persistence API annotations
+// Función: Importa anotaciones necesarias para mapear esta clase a una tabla de base de datos
+// Contexto: Usa Jakarta Persistence (JPA) para ORM (Mapeo Objeto-Relacional)
+// Implementación: Importa Entity, Table, Id, GeneratedValue, GenerationType
+// Resumen: Permite que esta clase funcione como una entidad JPA
 import jakarta.persistence.*;
 
-// This annotation marks the class as a JPA entity that maps to a database table
+// Función: Marca esta clase como una entidad JPA
+// Contexto: Requerido para que Hibernate/Spring reconozca esta clase como una tabla
+// Implementación: Se aplica justo arriba de la clase
+// Resumen: Convierte 'Persona' en una entidad gestionada
 @Entity
 
-// Specifies the name of the table in the database that this entity maps to
+// Función: Define el nombre de la tabla en la base de datos
+// Contexto: Reemplaza el nombre por defecto (el nombre de la clase)
+// Implementación: La tabla se llamará 'personas'
+// Resumen: Asocia esta entidad con la tabla 'personas'
 @Table(name = "personas")
 public class Persona {
 
-    // Marks this field as the primary key (ID) of the entity
+    // Función: Define la clave primaria de la entidad
+    // Contexto: Cada entidad debe tener un identificador único
+    // Implementación: Campo 'id' marcado con @Id
+    // Resumen: 'id' identifica de forma única cada registro
     @Id
 
-    // Specifies that the ID will be generated automatically by the database
-    // GenerationType.IDENTITY means the database will auto-increment the ID
+    // Función: Configura la generación automática de la clave primaria
+    // Contexto: Usa auto-incremento proporcionado por la base de datos
+    // Implementación: Estrategia establecida como GenerationType.IDENTITY
+    // Resumen: La base de datos asigna el ID automáticamente
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // These are simple fields (columns) for the entity
+    // Función: Declara los campos 'nombre', 'apellido', 'email'
+    // Contexto: Se mapearán como columnas en la base de datos
+    // Implementación: Variables privadas simples
+    // Resumen: Son los atributos de cada objeto Persona
     private String nombre;
     private String apellido;
     private String email;
 
-    // Default constructor (required by JPA)
+    // Función: Constructor sin argumentos
+    // Contexto: Necesario para que JPA pueda crear instancias automáticamente
+    // Implementación: Constructor vacío
+    // Resumen: Permite que Spring y JPA instancien la clase
     public Persona() {
     }
 
-    // Custom constructor to create a Persona with specific values
+    // Función: Constructor con argumentos
+    // Contexto: Útil para crear objetos Persona con valores específicos
+    // Implementación: Asigna valores a todos los campos excepto el ID
+    // Resumen: Permite crear objetos con datos iniciales
     public Persona(String nombre, String apellido, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
     }
 
-    // Getter method for the ID
+    // Función: Getter para el ID
+    // Contexto: Permite acceder al ID de la entidad
+    // Implementación: Retorna el valor de 'id'
+    // Resumen: Método público para leer el ID
     public Long getId() {
         return id;
     }
 
-    // Getter and setter for 'nombre'
+    // Función: Getter y setter para 'nombre'
+    // Contexto: Métodos estándar JavaBean para encapsulación
+    // Implementación: Métodos get y set simples
+    // Resumen: Métodos de acceso para el campo 'nombre'
     public String getNombre() {
         return nombre;
     }
@@ -49,7 +81,10 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    // Getter and setter for 'apellido'
+    // Función: Getter y setter para 'apellido'
+    // Contexto: Patrón JavaBean
+    // Implementación: Métodos get y set directos
+    // Resumen: Controla el acceso al campo 'apellido'
     public String getApellido() {
         return apellido;
     }
@@ -58,7 +93,10 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    // Getter and setter for 'email'
+    // Función: Getter y setter para 'email'
+    // Contexto: Permite obtener/modificar el correo
+    // Implementación: Métodos básicos de get/set
+    // Resumen: Maneja el acceso al campo 'email'
     public String getEmail() {
         return email;
     }
