@@ -1,8 +1,8 @@
 // Función: Declara la ubicación del paquete de esta clase modelo
 // Contexto: Organiza archivos y evita conflictos de nombres
-// Implementación: Paquete llamado 'model' dentro de 'com.example.personas'
+// Implementación: Paquete llamado 'model' dentro de 'dev.orlandobaig.personas'
 // Resumen: Esta clase pertenece a la capa 'model' de la aplicación
-package com.example.personas.model;
+package dev.orlandobaig.personas.model;
 
 // Función: Importa anotaciones necesarias para mapear esta clase a una tabla de base de datos
 // Contexto: Usa Jakarta Persistence (JPA) para ORM (Mapeo Objeto-Relacional)

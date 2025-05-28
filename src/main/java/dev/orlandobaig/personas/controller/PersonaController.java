@@ -1,11 +1,11 @@
 // Paquete donde se encuentra la clase
-package com.example.personas.controller;
+package dev.orlandobaig.personas.controller;
 
 // Importamos la clase Persona (modelo de datos)
-import com.example.personas.model.Persona;
+import dev.orlandobaig.personas.model.Persona;
 
 // Importamos el repositorio que maneja operaciones con la base de datos
-import com.example.personas.repository.PersonaRepository;
+import dev.orlandobaig.personas.repository.PersonaRepository;
 
 // Importamos anotaciones necesarias de Spring
 import org.springframework.beans.factory.annotation.Autowired;

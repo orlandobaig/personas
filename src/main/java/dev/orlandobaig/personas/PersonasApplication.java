@@ -2,7 +2,7 @@
 // Contexto: Organiza la estructura del proyecto y evita conflictos de nombres
 // Implementación: Paquete raíz del proyecto
 // Resumen: Esta clase pertenece al paquete base del proyecto 'personas'
-package com.example.personas;
+package dev.orlandobaig.personas;
 
 // Función: Importa la clase que permite ejecutar una aplicación Spring Boot
 // Contexto: Necesaria para iniciar el contexto de Spring y lanzar la aplicación

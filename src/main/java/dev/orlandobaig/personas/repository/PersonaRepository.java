@@ -1,6 +1,6 @@
-package com.example.personas.repository;
+package dev.orlandobaig.personas.repository;
 
-import com.example.personas.model.Persona;
+import dev.orlandobaig.personas.model.Persona;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -42,7 +42,7 @@ Esta aplicación permite gestionar personas (nombre, apellido, email) mediante o
 /src
   /main
     /java
-      /com/example/personas
+      /dev.orlandobaig.personas
         Persona.java
         PersonaController.java
         PersonaRepository.java
